@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: moccasin;
+    background-image: url(../img/dirt.jpg);
+    background-size: 100px 100px;
+    animation: dirt-animation 1.5s infinite linear;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+
+}
+
+.pipe {
+    width: 80px;
+    bottom: 0;
+    position: absolute;
+
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0%;
+
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.nuvem {
+    width: 550px;
+    position: absolute;
+    animation: nuvem-animation 10s infinite linear;
+}
+
+.score {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: green;
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: -2px 2px 2px #000;
+    z-index: 1;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f00;
+    font-size: 50pt;
+    text-shadow: -2px 2px 2px #000;
+    opacity: 0;
+}
+
+.rec {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background: #87ceeb;
+    color: #fff;
+    visibility: hidden;
+}
+
+
+    
+
+
+
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
+
+@keyframes nuvem-animation {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes dirt-animation {
+    from {
+        background-position: 0;
+    }
+
+    to {
+        background-position: -100%;
+    }
+}
